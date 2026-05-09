@@ -90,36 +90,40 @@ function forceActivateFeature(index) {
   });
 }
 
-// Click to switch
-featureItems.forEach((item, i) => {
-  item.addEventListener('click', () => forceActivateFeature(i));
-});
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-// ScrollTrigger for progress bar visibility
-ScrollTrigger.create({
-  trigger: '.features',
-  start: 'top top',
-  end: 'bottom bottom',
-  onEnter: () => progressWrap.classList.add('visible'),
-  onLeave: () => progressWrap.classList.remove('visible'),
-  onEnterBack: () => progressWrap.classList.add('visible'),
-  onLeaveBack: () => progressWrap.classList.remove('visible'),
-});
+if (!isMobile) {
+  // Click to switch
+  featureItems.forEach((item, i) => {
+    item.addEventListener('click', () => forceActivateFeature(i));
+  });
 
-// Scroll-driven feature switching
-const totalFeatures = featureItems.length;
-ScrollTrigger.create({
-  trigger: '.features',
-  start: 'top 60%',
-  end: 'bottom 40%',
-  invalidateOnRefresh: true,
-  onUpdate: (self) => {
-    const progress = self.progress;
-    progressBar.style.width = `${progress * 100}%`;
-    const idx = Math.min(Math.floor(progress * totalFeatures), totalFeatures - 1);
-    activateFeature(idx);
-  }
-});
+  // ScrollTrigger for progress bar visibility
+  ScrollTrigger.create({
+    trigger: '.features',
+    start: 'top top',
+    end: 'bottom bottom',
+    onEnter: () => progressWrap.classList.add('visible'),
+    onLeave: () => progressWrap.classList.remove('visible'),
+    onEnterBack: () => progressWrap.classList.add('visible'),
+    onLeaveBack: () => progressWrap.classList.remove('visible'),
+  });
+
+  // Scroll-driven feature switching
+  const totalFeatures = featureItems.length;
+  ScrollTrigger.create({
+    trigger: '.features',
+    start: 'top 60%',
+    end: 'bottom 40%',
+    invalidateOnRefresh: true,
+    onUpdate: (self) => {
+      const progress = self.progress;
+      progressBar.style.width = `${progress * 100}%`;
+      const idx = Math.min(Math.floor(progress * totalFeatures), totalFeatures - 1);
+      activateFeature(idx);
+    }
+  });
+}
 
 // Feature list items stagger in
 gsap.from('.feature-item', {
