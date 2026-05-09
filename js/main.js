@@ -254,9 +254,10 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-/* ---- Contact Form (Supabase ready) ---- */
+/* ---- Contact Form (Formspree) ---- */
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
+const isJa = document.documentElement.lang === 'ja';
 
 contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -266,26 +267,29 @@ contactForm.addEventListener('submit', async (e) => {
     email: contactForm.email.value.trim(),
     type: contactForm.type.value,
     message: contactForm.message.value.trim(),
-    created_at: new Date().toISOString()
   };
 
-  // TODO: Replace with Supabase client when configured
-  // Example:
-  // const { error } = await supabase.from('contacts').insert([data]);
-  // if (error) throw error;
+  formNote.textContent = isJa ? '送信中...' : 'Sending…';
+  formNote.className = 'form-note';
 
-  // Simulate for now
   try {
-    formNote.textContent = '送信中...';
-    formNote.className = 'form-note';
-    await new Promise(r => setTimeout(r, 800)); // simulate network
+    const res = await fetch('https://formspree.io/f/mnjwglok', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-    // Placeholder success — replace with real Supabase call
-    formNote.textContent = 'お問い合わせを受け付けました。ありがとうございます！';
+    if (!res.ok) throw new Error();
+
+    formNote.textContent = isJa
+      ? 'お問い合わせを受け付けました。ありがとうございます！'
+      : 'Message sent! We'll get back to you within 2 business days.';
     formNote.className = 'form-note success';
     contactForm.reset();
   } catch (err) {
-    formNote.textContent = '送信に失敗しました。しばらく後にお試しください。';
+    formNote.textContent = isJa
+      ? '送信に失敗しました。しばらく後にお試しください。'
+      : 'Something went wrong. Please try again or email exposir.app@gmail.com.';
     formNote.className = 'form-note error';
   }
 });
