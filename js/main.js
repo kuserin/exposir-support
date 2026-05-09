@@ -283,7 +283,7 @@ contactForm.addEventListener('submit', async (e) => {
 
     formNote.textContent = isJa
       ? 'お問い合わせを受け付けました。ありがとうございます！'
-      : 'Message sent! We'll get back to you within 2 business days.';
+      : "Message sent! We'll get back to you within 2 business days.";
     formNote.className = 'form-note success';
     contactForm.reset();
   } catch (err) {
