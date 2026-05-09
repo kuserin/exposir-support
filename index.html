@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exposir — Know the light. Nail the exposure.</title>
+  <meta name="description" content="Exposir – Precision light meter for film cameras and manual lenses.">
+  <style>
+    body { background: #0A0A0A; margin: 0; }
+  </style>
+  <script>
+    (function () {
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (lang.startsWith('ja')) {
+        window.location.replace('./ja/');
+      } else {
+        window.location.replace('./en/');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <noscript>
+    <p style="color:#fff;font-family:sans-serif;text-align:center;padding:40px;">
+      <a href="./en/" style="color:#D4AF37;">English</a> &nbsp;|&nbsp;
+      <a href="./ja/" style="color:#D4AF37;">日本語</a>
+    </p>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exposir — The precision light meter app for film cameras and manual lenses. Available on the App Store.">
+  <meta property="og:title" content="Exposir — Know the light. Nail the exposure.">
+  <meta property="og:description" content="The precision light meter for film cameras and manual lenses.">
+  <meta property="og:type" content="website">
+  <title>Exposir — Know the light. Nail the exposure.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">Exposir</a>
+      <ul class="nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+      <div class="nav__right">
+        <div class="nav__lang">
+          <span class="nav__lang-btn nav__lang-btn--active">EN</span>
+          <span class="nav__lang-sep">|</span>
+          <a href="../ja/" class="nav__lang-btn">JA</a>
+        </div>
+        <a href="#download" class="btn btn--nav">App Store</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#support">Support</a></li>
+        <li class="nav__mobile-lang"><a href="../ja/">日本語 →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__icon-wrap" id="heroIcon">
+        <div class="app-icon">
+          <img src="../images/icon/icon_ver1.png" alt="Exposir app icon">
+        </div>
+      </div>
+      <div class="hero__text" id="heroText">
+        <p class="hero__eyebrow">Precision Light Meter for iOS</p>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Know the light.</span>
+          <span class="hero__title-line hero__title-line--accent">Nail the exposure.</span>
+        </h1>
+        <p class="hero__subtitle">The precision light meter app for<br>film cameras and manual lenses.</p>
+        <div class="hero__cta">
+          <a href="#download" class="btn btn--primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== APP SHOWCASE ========== -->
+  <section class="app-showcase">
+    <div class="app-showcase__inner">
+      <img src="../images/screenshots/Main_portrait.PNG" alt="Exposir main screen" class="app-showcase__img app-showcase__img--portrait">
+      <img src="../images/screenshots/Main.PNG" alt="Exposir slide rule view" class="app-showcase__img app-showcase__img--landscape">
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features" id="features">
+    <div class="features__sticky-container">
+      <div class="features__progress">
+        <div class="features__progress-bar" id="featuresProgressBar"></div>
+      </div>
+      <div class="features__header">
+        <p class="section-eyebrow">Features</p>
+        <h2 class="section-title">Everything you need to <span class="text-accent">own the light</span></h2>
+        <p class="features__tagline">No subscriptions. No ads. Just a reliable tool that works every time you raise your camera.</p>
+      </div>
+      <div class="features__layout">
+        <div class="features__list" id="featuresList">
+          <div class="feature-item feature-item--active" data-feature="0">
+            <div class="feature-item__num">01</div>
+            <div class="feature-item__body">
+              <h3>Three Metering Modes</h3>
+              <p>Switch between Average, Center-Weighted, and Spot metering in one tap. In Spot mode, simply tap anywhere on the screen to meter exactly where you need — no guesswork, just the data you need to make the right exposure decision.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="1">
+            <div class="feature-item__num">02</div>
+            <div class="feature-item__body">
+              <h3>Spot Meter Anywhere</h3>
+              <p>In Spot mode, tap any point on the live view to meter precisely at that exact location. No matter how complex the light, you can isolate the reading for the subject that matters — total control, one tap.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="2">
+            <div class="feature-item__num">03</div>
+            <div class="feature-item__body">
+              <h3>Exposure Slide Rule</h3>
+              <p>The built-in slide rule shows aperture and shutter speed combinations side by side — all equivalent exposures for the current EV, so you can find the right settings in seconds and pick the one that suits your creative intent.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="3">
+            <div class="feature-item__num">04</div>
+            <div class="feature-item__body">
+              <h3>Fine Compensation &amp; Focal Length</h3>
+              <p>Dial in exposure compensation in precise 0.1 EV steps with an intuitive slider. Set the focal length of your lens and Exposir shows the minimum safe shutter speed to prevent camera shake — essential when shooting with manual lenses that carry no EXIF data.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="4">
+            <div class="feature-item__num">05</div>
+            <div class="feature-item__body">
+              <h3>Lock Your Exposure</h3>
+              <p>Lock the screen and take your time — compose your shot and consider your exposure without rushing. Exposir acts as a second viewfinder, giving you the freedom to think before you shoot. The red lock icon keeps you in control.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="5">
+            <div class="feature-item__num">06</div>
+            <div class="feature-item__body">
+              <h3>Long Exposure Mode</h3>
+              <p>Planning a long exposure? Exposir calculates the correct shutter speed for any ND filter from ND2 to ND1000, then counts down with a built-in timer — complete with pause, resume, and a notification when your exposure is done.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="6">
+            <div class="feature-item__num">07</div>
+            <div class="feature-item__body">
+              <h3>Home &amp; Lock Screen Widget</h3>
+              <p>Add Exposir to your Home Screen or Lock Screen with the built-in widget. Launch the app instantly, right when the light catches your eye — no searching, no delays, just tap and shoot.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-feature="7">
+            <div class="feature-item__num">08</div>
+            <div class="feature-item__body">
+              <h3>Customisable Interface</h3>
+              <p>Make Exposir your own. Adjust EV compensation steps, choose background and live-frame colours, and colour-code aperture and shutter speed values — so the UI works exactly the way you think.</p>
+            </div>
+          </div>
+        </div>
+        <div class="features__mockup" id="featuresMockup">
+          <div class="features__screenshot-frame">
+            <img src="../images/screenshots/Exposir_HP-01.png" alt="Three metering modes" class="features__screenshot-img active" data-slide="0">
+            <img src="../images/screenshots/Exposir_HP-07.png" alt="Spot meter anywhere" class="features__screenshot-img" data-slide="1">
+            <img src="../images/screenshots/Exposir_HP-02.png" alt="Exposure slide rule" class="features__screenshot-img" data-slide="2">
+            <img src="../images/screenshots/Exposir_HP-03.png" alt="Fine compensation and focal length" class="features__screenshot-img" data-slide="3">
+            <img src="../images/screenshots/Exposir_HP-08.png" alt="Lock your exposure" class="features__screenshot-img" data-slide="4">
+            <img src="../images/screenshots/Exposir_HP-05.png" alt="Long exposure mode" class="features__screenshot-img" data-slide="5">
+            <img src="../images/screenshots/Exposir_HP-11.png" alt="Home and Lock Screen widget" class="features__screenshot-img" data-slide="6">
+            <img src="../images/screenshots/Exposir_HP-09.png" alt="Customisable interface" class="features__screenshot-img features__screenshot-img--crop" data-slide="7">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCREENSHOTS ========== -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <p class="section-eyebrow">Screenshots</p>
+      <h2 class="section-title">A <span class="text-accent">refined</span> experience</h2>
+      <p class="section-subtitle">Dark-first design built for any shooting condition. Clean, intuitive controls so you can stay focused on the shot.</p>
+    </div>
+    <div class="screenshots__track" id="screenshotsTrack">
+      <div class="screenshots__item">
+        <img src="../images/screenshots/IMG_4427.PNG" alt="Average metering mode" class="screenshot-img">
+      </div>
+      <div class="screenshots__item">
+        <img src="../images/screenshots/IMG_4426.PNG" alt="Spot metering mode" class="screenshot-img">
+      </div>
+      <div class="screenshots__item">
+        <img src="../images/screenshots/IMG_4436.PNG" alt="Exposure lock with focal length" class="screenshot-img">
+      </div>
+      <div class="screenshots__item">
+        <img src="../images/screenshots/IMG_4437.PNG" alt="ISO selection" class="screenshot-img">
+      </div>
+      <div class="screenshots__item">
+        <img src="../images/screenshots/IMG_4429.PNG" alt="Long exposure calculator" class="screenshot-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOWNLOAD ========== -->
+  <section class="download" id="download">
+    <div class="download__bg"></div>
+    <div class="container download__inner">
+      <div class="download__icon-wrap">
+        <div class="app-icon app-icon--large">
+          <img src="../images/icon/icon_ver1.png" alt="Exposir app icon">
+        </div>
+      </div>
+      <h2 class="download__title">Start shooting smarter</h2>
+      <p class="download__subtitle">Take Exposir with you on every shoot.<br>Free to download for iPhone and iPad.</p>
+      <div class="download__badges">
+        <a href="#" class="app-store-badge" id="appStoreLink">
+          <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
+            <rect width="135" height="40" rx="8" fill="#000" stroke="#fff" stroke-width="1.5"/>
+            <text x="38" y="14" font-family="Inter,sans-serif" font-size="9" fill="#fff" opacity="0.8">Download on the</text>
+            <text x="37" y="29" font-family="Inter,sans-serif" font-size="16" font-weight="600" fill="#fff">App Store</text>
+            <path d="M18 20.5c-.73-1.04-1.16-2.29-1.16-3.64 0-1.46.5-2.8 1.32-3.86l1.8 1.8c-.43.59-.68 1.32-.68 2.06 0 .69.22 1.34.59 1.87L18 20.5zm4.5 4.5c-1.04.73-2.29 1.16-3.64 1.16-1.46 0-2.8-.5-3.86-1.32l1.8-1.8c.59.43 1.32.68 2.06.68.69 0 1.34-.22 1.87-.59L22.5 25zm4.5-4.5c.73 1.04 1.16 2.29 1.16 3.64 0 1.46-.5 2.8-1.32 3.86l-1.8-1.8c.43-.59.68-1.32.68-2.06 0-.69-.22-1.34-.59-1.87L27 20.5zm-4.5-4.5c1.04-.73 2.29-1.16 3.64-1.16 1.46 0 2.8.5 3.86 1.32l-1.8 1.8c-.59-.43-1.32-.68-2.06-.68-.69 0-1.34.22-1.87.59L22.5 16z" fill="#fff"/>
+          </svg>
+        </a>
+      </div>
+      <p class="download__note">Requires iOS 16.0 or later · iPhone &amp; iPad</p>
+    </div>
+  </section>
+
+  <!-- ========== SUPPORT ========== -->
+  <section class="support" id="support">
+    <div class="container">
+      <p class="section-eyebrow">Support</p>
+      <h2 class="section-title">Support</h2>
+    </div>
+    <div class="support__grid">
+      <div class="support__card" id="contactCard">
+        <h3 class="support__card-title">Contact Us</h3>
+        <p class="support__card-desc">Bug reports, feature requests, and general questions are all welcome.</p>
+        <form class="contact-form" id="contactForm">
+          <div class="form-field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="contactType">Category</label>
+            <select id="contactType" name="type">
+              <option value="bug">Bug Report</option>
+              <option value="feature">Feature Request</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us what's on your mind…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+      <div class="support__links">
+        <a href="privacy.html" class="support__link-card">
+          <div class="support__link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div><h4>Privacy Policy</h4><p>How we handle your data</p></div>
+          <svg class="support__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="terms.html" class="support__link-card">
+          <div class="support__link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><h4>Terms of Use</h4><p>Terms and conditions</p></div>
+          <svg class="support__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <div class="support__faq">
+          <h4>FAQ</h4>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Which iOS version is required?<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer">Exposir requires iOS 16.0 or later. It runs on both iPhone and iPad.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Is it really free?<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer">Yes — all core features are free. Optional premium features may be available via in-app purchase in a future update.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How accurate is it compared to a dedicated meter?<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer">Exposir uses your iPhone's camera sensor to deliver practical, reliable readings. Results are excellent for most shooting situations, though a dedicated incident meter may have a slight edge in controlled studio settings.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Which countries is Exposir available in?<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer">Exposir is currently available on the App Store in the United States, United Kingdom, Canada, and Australia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Exposir</span>
+        <p>Know the light. Nail the exposure.</p>
+      </div>
+      <div class="footer__links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="#support">Contact</a>
+        <a href="../ja/" class="footer__lang-link">日本語</a>
+      </div>
+      <div class="footer__copy">
+        <p>&copy; 2026 Exposir. All rights reserved.</p>
+        <p>Made with care for film photographers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

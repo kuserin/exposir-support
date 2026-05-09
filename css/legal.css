@@ -1,0 +1,73 @@
+/* ---- Legal Pages ---- */
+.legal {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+}
+
+.legal__container {
+  max-width: 760px;
+  padding: 80px 24px 120px;
+}
+
+.legal__header {
+  margin-bottom: 64px;
+}
+
+.legal__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.legal__date {
+  font-size: 0.85rem;
+  color: var(--gray-3);
+}
+
+.legal__body {
+  color: var(--gray-2);
+  line-height: 1.8;
+}
+
+.legal__body p {
+  margin-bottom: 20px;
+}
+
+.legal__body h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 40px 0 12px;
+}
+
+.legal__body ul {
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal__body ul li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.legal__body ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.legal__body a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal__back {
+  margin-top: 60px;
+  display: inline-flex;
+}
