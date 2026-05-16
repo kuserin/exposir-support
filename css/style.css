@@ -1110,6 +1110,84 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
 
 
 /* ============================================
+   WHAT'S NEW
+   ============================================ */
+.whats-new {
+  padding: 120px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.whats-new__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 56px;
+}
+
+.whats-new__version {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold-dim);
+  border: 1px solid rgba(255,140,0,0.25);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.whats-new__date {
+  font-size: 0.85rem;
+  color: var(--gray-3);
+}
+
+.whats-new__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.whats-new__card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.whats-new__card:hover {
+  border-color: rgba(255,140,0,0.3);
+  transform: translateY(-4px);
+}
+
+.whats-new__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(255,140,0,0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.whats-new__card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.whats-new__card p {
+  font-size: 0.9rem;
+  color: var(--gray-2);
+  line-height: 1.75;
+}
+
+/* ============================================
    DOWNLOAD
    ============================================ */
 .download {
@@ -1432,6 +1510,10 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   .screenshots__track { padding-left: 24px; }
   .screenshots__item { width: 180px; }
   .screenshot-placeholder { width: 180px; height: 390px; }
+
+  .whats-new { padding: 80px 0; }
+  .whats-new__grid { grid-template-columns: 1fr; gap: 16px; }
+  .whats-new__card { padding: 28px 24px; }
 
   .download { padding: 100px 0; }
   .download__subtitle br { display: none; }

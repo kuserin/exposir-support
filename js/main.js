@@ -204,6 +204,19 @@ gsap.utils.toArray('.section-eyebrow, .section-title, .section-subtitle').forEac
   });
 });
 
+/* ---- What's New section ---- */
+gsap.from('.whats-new__card', {
+  scrollTrigger: {
+    trigger: '.whats-new__grid',
+    start: 'top 80%',
+  },
+  opacity: 0,
+  y: 40,
+  stagger: 0.15,
+  duration: 0.7,
+  ease: 'power2.out'
+});
+
 /* ---- Download section ---- */
 gsap.from('.download__icon-wrap', {
   scrollTrigger: { trigger: '.download', start: 'top 75%' },
