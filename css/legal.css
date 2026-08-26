@@ -71,3 +71,51 @@
   margin-top: 60px;
   display: inline-flex;
 }
+
+/* ============================================
+   特定商取引法に基づく表記などの項目表
+   ============================================ */
+.legal__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 32px;
+  font-size: 0.95rem;
+}
+
+.legal__table th,
+.legal__table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.8;
+}
+
+.legal__table th {
+  width: 34%;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255,255,255,0.03);
+  white-space: nowrap;
+}
+
+.legal__table td {
+  color: var(--gray-1);
+}
+
+.legal__table td a { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .legal__table,
+  .legal__table tbody,
+  .legal__table tr,
+  .legal__table th,
+  .legal__table td {
+    display: block;
+    width: 100%;
+    white-space: normal;
+  }
+  .legal__table tr { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 4px 0 12px; }
+  .legal__table th { border-bottom: none; padding: 14px 0 4px; background: transparent; }
+  .legal__table td { border-bottom: none; padding: 0 0 8px; }
+}
