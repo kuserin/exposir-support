@@ -40,7 +40,7 @@ body{
     <p class="sub">Light meter for film photographers</p>
   </div>
   <p class="copy">See it in black and white first.</p>
-  <a class="cta" id="cta" href="https://apps.apple.com/us/app/exposir/id6766769093">
+  <a class="cta" id="cta" href="https://apps.apple.com/app/apple-store/id6766769093?pt=128871534&amp;ct=bw_first_us_202609&amp;mt=8">
     <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
     Get it on the App Store
   </a>
@@ -48,36 +48,14 @@ body{
 
 <script>
 (function(){
-  var STORE = "https://apps.apple.com/us/app/exposir/id6766769093";
+  var STORE = "https://apps.apple.com/app/apple-store/id6766769093?pt=128871534&ct=bw_first_us_202609&mt=8";
   var DELAY = 1500;
-  var params = new URLSearchParams(location.search);
-  var preview = params.has("preview");
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-R3J59YSTQH", {transport_type: "beacon"});
-  gtag("event", "bridge_page_view");
-
-  var done = false;
-  function go(eventName){
-    if (done) return;
-    done = true;
-    gtag("event", eventName, {transport_type: "beacon"});
-    if (!preview) location.replace(STORE);
-  }
-
-  document.getElementById("cta").addEventListener("click", function(e){
-    if (done) return;
-    done = true;
-    gtag("event", "store_click_manual", {transport_type: "beacon"});
-  });
-
-  if (!preview) {
-    setTimeout(function(){ go("store_redirect_auto"); }, DELAY);
-  }
+  if (new URLSearchParams(location.search).has("preview")) return;
+  // location.replace で履歴を残さない（戻るでこのページに再着地しない）
+  var timer = setTimeout(function(){ location.replace(STORE); }, DELAY);
+  // 手動タップ時は保留中の自動遷移を止める
+  document.getElementById("cta").addEventListener("click", function(){ clearTimeout(timer); });
 })();
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R3J59YSTQH"></script>
 </body>
 </html>
